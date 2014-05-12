@@ -3,6 +3,7 @@ import Test.QuickCheck
 sqr :: Integer -> Integer
 sqr x = x * x
 
+-- Divide and conquer, O(lg n) solution.
 pow :: Integer -> Integer -> Integer
 pow x 0 = 1
 pow x 1 = x
@@ -13,5 +14,5 @@ pow x n
 
 --quickCheck ((\x n -> pow x n == x ^ n) :: Integer -> Integer -> Bool)
 
-powt :: Integer -> Positive Integer -> Bool
-powt x (Positive n) = pow x n  == x ^ n
+test_pow :: Integer -> Positive Integer -> Bool
+test_pow x (Positive n) = pow x n  == x ^ n
