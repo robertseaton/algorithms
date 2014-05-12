@@ -3,6 +3,13 @@ import Test.QuickCheck
 sqr :: Integer -> Integer
 sqr x = x * x
 
+-- The naive implementation.
+pow' :: Integer -> Integer -> Integer
+pow' x 0 = 1
+pow' x n
+  | n < 0 = 0
+  | otherwise = x * pow x (n - 1)
+
 -- Divide and conquer, O(lg n) solution.
 pow :: Integer -> Integer -> Integer
 pow x 0 = 1
