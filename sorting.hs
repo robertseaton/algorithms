@@ -1,7 +1,8 @@
 {-# OPTIONS_GHC -Wall #-}
 
 module Sorting
-       ( mergesort )
+       ( mergesort,
+         quicksort )
        where
 
 -- TODO: A split that calls a length might result in worse complexity.
@@ -20,3 +21,10 @@ merge cmp (x:xs) (y:ys)
 
 mergesort :: Ord a => [a] -> [a]
 mergesort = mergesortBy compare
+
+quicksort :: Ord a => [a] -> [a]
+quicksort [] = []
+quicksort (p:ps) = quicksort lt ++ [p] ++ quicksort gt
+  where
+    lt = filter (< p) ps
+    gt = filter (> p) ps
