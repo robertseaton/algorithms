@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wall #-}
+
 import Exponents
 import Sorting
 import Test.Framework

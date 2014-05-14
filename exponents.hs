@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wall #-}
+
 module Exponents
        ( pow'
        , pow
@@ -27,6 +29,4 @@ pow x n
 
 --quickCheck ((\x n -> pow x n == x ^ n) :: Integer -> Integer -> Bool)
 
-test_pow :: Integer -> Positive Integer -> Bool
-test_pow x (Positive n) = pow x n  == x ^ n
 
