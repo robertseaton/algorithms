@@ -27,6 +27,4 @@ pow x n
   | even n = sqr $ pow x (n `div` 2)
   | odd n = x * (sqr $ pow x ((n - 1) `div` 2))
 
---quickCheck ((\x n -> pow x n == x ^ n) :: Integer -> Integer -> Bool)
-
 
