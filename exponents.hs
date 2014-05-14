@@ -1,3 +1,9 @@
+module Exponents
+       ( pow'
+       , pow
+       )
+       where
+
 import Test.QuickCheck
 
 sqr :: Integer -> Integer
@@ -23,3 +29,4 @@ pow x n
 
 test_pow :: Integer -> Positive Integer -> Bool
 test_pow x (Positive n) = pow x n  == x ^ n
+
