@@ -17,7 +17,8 @@ tests =
           , testProperty "pow'" pow_t' ]
       , testGroup "Sorting"
          [ testProperty "mergesort" mergesort_t
-         , testProperty "quicksort" quicksort_t ]
+         , testProperty "quicksort" quicksort_t
+         , testProperty "insertion sort" insertionsort_t ]
       ]
 
 pow_t, pow_t' :: Integer -> Positive Integer -> Bool
@@ -29,3 +30,6 @@ mergesort_t xs = sort xs == mergesort xs
 
 quicksort_t :: [Int] -> Bool
 quicksort_t xs = sort xs == quicksort xs
+
+insertionsort_t :: [Int] -> Bool
+insertionsort_t xs = sort xs == insertionsort xs
