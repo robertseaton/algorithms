@@ -13,8 +13,8 @@ main = defaultMain tests
 tests :: [Test]
 tests =
       [ testGroup "Exponents"
-          [ testProperty "pow" pow_t
-          , testProperty "pow'" pow_t' ]
+          [ testProperty "divide and conquer pow" pow_t
+          , testProperty "naive pow" pow_t' ]
       , testGroup "Sorting"
          [ testProperty "mergesort" mergesort_t
          , testProperty "quicksort" quicksort_t
