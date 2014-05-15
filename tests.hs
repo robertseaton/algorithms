@@ -25,11 +25,10 @@ pow_t, pow_t' :: Integer -> Positive Integer -> Bool
 pow_t x (Positive n) = pow x n  == x ^ n
 pow_t' x (Positive n) = pow x n  == x ^ n
 
-mergesort_t :: [Int] -> Bool
-mergesort_t xs = sort xs == mergesort xs
+sort_t :: ([Int] -> [Int]) -> [Int] -> Bool
+sort_t sortf xs = sort xs == sortf xs
 
-quicksort_t :: [Int] -> Bool
-quicksort_t xs = sort xs == quicksort xs
-
-insertionsort_t :: [Int] -> Bool
-insertionsort_t xs = sort xs == insertionsort xs
+mergesort_t, quicksort_t, insertionsort_t :: [Int] -> Bool
+mergesort_t = sort_t mergesort
+quicksort_t = sort_t quicksort
+insertionsort_t = sort_t insertionsort
