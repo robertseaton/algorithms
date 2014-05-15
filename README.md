@@ -5,3 +5,4 @@ Currently implemented:
 * Divide and conquer, O(lg n) version of exponentiation. 
 * Mergesort.
 * Quicksort.
+* Insertion sort.
