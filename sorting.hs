@@ -26,5 +26,5 @@ quicksort :: Ord a => [a] -> [a]
 quicksort [] = []
 quicksort (p:ps) = quicksort lt ++ [p] ++ quicksort gt
   where
-    lt = filter (< p) ps
+    lt = filter (<= p) ps
     gt = filter (> p) ps
