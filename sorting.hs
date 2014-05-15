@@ -2,7 +2,8 @@
 
 module Sorting
        ( mergesort,
-         quicksort )
+         quicksort,
+         insertionsort )
        where
 
 -- TODO: A split that calls a length might result in worse complexity.
@@ -28,3 +29,13 @@ quicksort (p:ps) = quicksort lt ++ [p] ++ quicksort gt
   where
     lt = filter (<= p) ps
     gt = filter (> p) ps
+
+insertionsort :: Ord a => [a] -> [a]
+insertionsort [] = []
+insertionsort (x:xs) = insert x (insertionsort xs)
+
+insert :: Ord a => a -> [a] -> [a]
+insert x [] = [x]
+insert x (y:ys)
+  | x < y = y : insert x ys
+  | otherwise = x : y : ys
