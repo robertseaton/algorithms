@@ -37,5 +37,5 @@ insertionsort (x:xs) = insert x (insertionsort xs)
 insert :: Ord a => a -> [a] -> [a]
 insert x [] = [x]
 insert x (y:ys)
-  | x < y = y : insert x ys
+  | x > y = y : insert x ys
   | otherwise = x : y : ys
