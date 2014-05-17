@@ -17,7 +17,9 @@ phi :: Double
 phi = (1 + sqrt 5) / 2
 
 -- Closed form version of the Fibonacci sequence, O(lg n) time.
---fib'' :: Int -> Integer
---fib'' n = 
+fib'' :: Int -> Integer
+fib'' n = round $ (phi ^ n - psi ^ n) / sqrt 5
+  where
+    psi = 1 - phi
 
 -- Matrix version of the Fibonacci sequence, O(lg n) time.
