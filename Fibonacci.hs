@@ -1,3 +1,5 @@
+import Data.Matrix
+
 -- Naive, exponential time Fibonacci implementation. O(golden-ration^n) time.
 fib :: Int -> Integer
 fib 0 = 0
@@ -23,3 +25,7 @@ fib'' n = round $ (phi ^ n - psi ^ n) / sqrt 5
     psi = 1 - phi
 
 -- Matrix version of the Fibonacci sequence, O(lg n) time.
+fib''' :: Int -> Integer
+fib''' n = getElem 1 2 $ mtrx ^ n
+  where
+    mtrx = fromList 2 2 [1, 1, 1, 0]
