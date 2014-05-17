@@ -11,3 +11,13 @@ fib' :: Int -> Integer
 fib' n = fibs !! n
   where
     fibs = [0, 1] ++ zipWith (+) fibs (tail fibs)
+
+-- The golden ratio.
+phi :: Double
+phi = (1 + sqrt 5) / 2
+
+-- Closed form version of the Fibonacci sequence, O(lg n) time.
+--fib'' :: Int -> Integer
+--fib'' n = 
+
+-- Matrix version of the Fibonacci sequence, O(lg n) time.
