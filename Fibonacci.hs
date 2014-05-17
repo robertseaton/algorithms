@@ -1,4 +1,11 @@
-import Data.Matrix
+module Fibonacci
+       ( fib,
+         fib',
+         fib'',
+         fib''' )
+       where
+
+import Data.Matrix (fromList, getElem)
 
 -- Naive, exponential time Fibonacci implementation. O(golden-ration^n) time.
 fib :: Int -> Integer
