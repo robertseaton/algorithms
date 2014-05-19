@@ -35,6 +35,7 @@ fib'' n
 
 -- Matrix version of the Fibonacci sequence, O(lg n) time.
 fib''' :: Int -> Integer
+fib''' 0 = 0
 fib''' n
   | n < 0 = error "Negative Fibonacci numbers don't exist!"
   | otherwise = getElem 1 2 $ mtrx ^ n
