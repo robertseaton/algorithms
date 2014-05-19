@@ -7,7 +7,7 @@ module Fibonacci
 
 import Data.Matrix (fromList, getElem)
 
--- Naive, exponential time Fibonacci implementation. O(golden-ration^n) time.
+-- Naive, exponential time Fibonacci implementation. O(golden-ratio^n) time.
 fib :: Int -> Integer
 fib 0 = 0
 fib 1 = 1
@@ -27,12 +27,16 @@ phi = (1 + sqrt 5) / 2
 
 -- Closed form version of the Fibonacci sequence, O(lg n) time.
 fib'' :: Int -> Integer
-fib'' n = round $ (phi ^ n - psi ^ n) / sqrt 5
+fib'' n
+  | n < 0 = error "Negative Fibonacci numbers don't exist!"
+  | otherwise = round $ (phi ^ n - psi ^ n) / sqrt 5
   where
     psi = 1 - phi
 
 -- Matrix version of the Fibonacci sequence, O(lg n) time.
 fib''' :: Int -> Integer
-fib''' n = getElem 1 2 $ mtrx ^ n
+fib''' n
+  | n < 0 = error "Negative Fibonacci numbers don't exist!"
+  | otherwise = getElem 1 2 $ mtrx ^ n
   where
     mtrx = fromList 2 2 [1, 1, 1, 0]
