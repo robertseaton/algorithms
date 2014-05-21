@@ -6,3 +6,7 @@ Currently implemented:
 * Mergesort.
 * Quicksort.
 * Insertion sort.
+* Naive, (phi^n) Fibonacci numbers.
+* Bottom up, O(n) Fibonacci numbers.
+* Closed-form solution to Fibonacci numbers, which relies on floating point and thus isn't terribly accurate.
+* Matrix-based, O(lg n) Fibonacci numbers.
