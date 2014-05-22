@@ -20,10 +20,6 @@ tests =
          [ testProperty "mergesort" mergesort_t
          , testProperty "quicksort" quicksort_t
          , testProperty "insertion sort" insertionsort_t ]
-      , testGroup "Fibonacci Numbers"
-          [ testProperty "bottom up fibonacci" fib_t'
-          , testProperty "closed form fibonacci" fib_t''
-          , testProperty "matrix fibonacci" fib_t''' ]
       ]
 
 pow_t, pow_t' :: Integer -> Positive Integer -> Bool
@@ -39,9 +35,9 @@ quicksort_t = sort_t quicksort
 insertionsort_t = sort_t insertionsort
 
 fib_t :: (Int -> Integer) -> Positive Int -> Bool
-fib_t f (Positive n) = f n == fib' n
+fib_t f (Positive n) = f n == fib''' n
 
 fib_t', fib_t'', fib_t''' :: Positive Int -> Bool
-fib_t' = fib_t fib''
+fib_t' = fib_t fib'
 fib_t'' = fib_t fib''
 fib_t''' = fib_t fib'''
