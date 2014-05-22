@@ -3,7 +3,8 @@
 module Sorting
        ( mergesort,
          quicksort,
-         insertionsort )
+         insertionsort,
+         selectionsort )
        where
 
 -- TODO: A split that calls a length might result in worse complexity.
@@ -39,3 +40,12 @@ insert x [] = [x]
 insert x (y:ys)
   | x > y = y : insert x ys
   | otherwise = x : y : ys
+
+selectionsort :: Ord a => [a] -> [a]
+selectionsort [] = []
+selectionsort xs = x : selectionsort (rm x xs)
+  where
+    x = minimum xs
+    rm z (y:ys)
+      | z == y = ys
+      | otherwise = y : rm z ys
